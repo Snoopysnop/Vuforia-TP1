@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenButton : MonoBehaviour
+public class RedButton : MonoBehaviour
 {
     public GameObject astronaut;
 
@@ -18,6 +18,6 @@ public class GreenButton : MonoBehaviour
         
     }
     void OnMouseDown() {
-        astronaut.transform.Rotate(90f , 0, 0);
+        astronaut.transform.Rotate(-90f , 0, 0);
     }
 }

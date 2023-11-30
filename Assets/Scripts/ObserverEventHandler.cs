@@ -15,41 +15,10 @@ using Vuforia;
 
 public class ObserverEventHandler : DefaultObserverEventHandler
 {
-
-    int t = 0;
-    protected override void HandleTargetStatusChanged(Status previousStatus, Status newStatus)
-    {
-        var shouldBeRendererBefore = ShouldBeRendered(previousStatus);
-        var shouldBeRendererNow = ShouldBeRendered(newStatus);
-        if (shouldBeRendererBefore != shouldBeRendererNow)
-        {
-            if (shouldBeRendererNow)
-            {
-                OnTrackingFound();
-
-
-            }
-            else
-            {
-                OnTrackingLost();
-            }
-        }
-        else
-        {
-            if (!mCallbackReceivedOnce && !shouldBeRendererNow)
-            {
-                // This is the first time we are receiving this callback, and the target is not visible yet.
-                // --> Hide the augmentation.
-                OnTrackingLost();
-            }
-        }
-
-        mCallbackReceivedOnce = true;
-    }
+    int renderedItem = 0;
 
     protected override void OnTrackingFound()
     {
-
         if (mObserverBehaviour)
         {
             var rendererComponents = VuforiaRuntimeUtilities.GetComponentsInChildrenExcluding<Renderer, DefaultObserverEventHandler>(mObserverBehaviour.gameObject);
@@ -68,30 +37,12 @@ public class ObserverEventHandler : DefaultObserverEventHandler
             // Enable rendering:
             foreach (var component in rendererComponents)
             {
-
-                if (item == t)
-                {
-                    component.enabled = true;
-  
-                }
-                else
-                {
-                    component.enabled = false;
-                }
-                item++;
-                if (item == 3){
-                    item = 0;
-                }
-         
+                if (item == renderedItem) component.enabled = true;
+                else component.enabled = false;
             }
-            t++;
-            if (t == 3)
-            {
-                t = 0;
-            }
-            
 
-            
+            renderedItem %= 3;
+            renderedItem++;
         }
 
         OnTargetFound?.Invoke();
