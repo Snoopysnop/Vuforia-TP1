@@ -6,13 +6,13 @@
 
 When adding the image target representation, it is displayed on top of the actual image target.
 
-[exo 2_1] [exo 2_2]
+![ex 2_1](Rendu/ex%202_1.png)
 
-![exo 2_1](https://gitlab.istic.univ-rennes1.fr/ggombert/tp-tia-vuforia/-/blob/9bb3ae85fb9a0a63cbb7093f6b934fd960dbfe24/Rendu/ex%202_1.png)
+![ex 2_2](Rendu/ex%202_2.png)
 
 > What happens if some of the game objects are affected by the unity physics?
 
-Vuforia Game Objects are affected by the unity physics like any other Game Object. For example, we added a Rigidbody to the Astronaut and noticed him fall when lauching the program.
+Vuforia Game Objects are affected by the unity physics like any other Game Object. For example, we added a `Rigidbody` to the Astronaut and noticed him fall when lauching the program.
 
 # Exercise 3
 
@@ -23,7 +23,9 @@ The "World Center Mode" option define the origin (or anchor point) for the coord
 > Does it impact the behavior you defined in the second exercise?
 
 It has no impact on the behaviour defined in the second exercise.
-Target representation is still shown when activated and the game object still falls when given a Rigidbody.
+Target representation is still shown when activated and the game object still falls when given a `Rigidbody`.
+
+![ex 3_1](Rendu/ex%203_1.png)
 
 # Exercise 4
 
@@ -42,7 +44,7 @@ For example, later on, we used `onTargetFound` and `onTargetLost` to change the 
 
 # Exercise 6
 
-Below is the code we wrote to display a different object every time that the Image Target becomes visible.
+Below is the code we wrote to display a different object every time that the `Image Target` becomes visible.
 
 ```
 public class ObserverEventHandler : DefaultObserverEventHandler
@@ -84,4 +86,4 @@ public class ObserverEventHandler : DefaultObserverEventHandler
 
 # Exercise
 
-[ex]
+![ex](Rendu/ex.png)
