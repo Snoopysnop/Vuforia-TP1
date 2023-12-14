@@ -8,6 +8,8 @@ When adding the image target representation, it is displayed on top of the actua
 
 [exo 2_1] [exo 2_2]
 
+![exo 2_1](https://gitlab.istic.univ-rennes1.fr/ggombert/tp-tia-vuforia/-/blob/9bb3ae85fb9a0a63cbb7093f6b934fd960dbfe24/Rendu/ex%202_1.png)
+
 > What happens if some of the game objects are affected by the unity physics?
 
 Vuforia Game Objects are affected by the unity physics like any other Game Object. For example, we added a Rigidbody to the Astronaut and noticed him fall when lauching the program.
